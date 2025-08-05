@@ -1,0 +1,33 @@
+# variables
+deriv(S) <-  - beta * S * I / N
+deriv(I) <- beta * S * I / N - sigma * I
+deriv(R) <- sigma * I
+# initial conditions
+initial(S) <- N - InfStart
+initial(I) <- InfStart
+initial(R) <- 0
+# parameters
+N <- user(1e6)
+InfStart <- user(1)
+beta <- user(4)
+sigma <- user(2)
+
+##################### Sensitivity Options
+#Parameter: sigma
+#Variation Type: Range
+#Scale Type: Arithmetic
+#From: 3
+#To: 5
+#Number of runs: 10
+
+#################### Type of Plot
+#Trace over time
+
+#################### Model Parameters
+#beta = 4
+#InfStart = 1
+#N = 1e6
+sigma = 2
+
+#################### Run Options
+#End Time = 20
